@@ -1,0 +1,38 @@
+PART 1: Open Systems Interconnection (OSI) model
+A conceptual framework that describes the functions of a networking or telecommunication system. 
+
+Short summary: 
+7. Application Apps that users interact with directly. Etc. Google Chrome 
+Protocol examples: HTTP, FTP, DHCP, IRC 
+
+6. Presentation Translation of application format <-> network format. Etc. Encryption & decryption of data for secure transmission. 
+Protocol exauples: TSL, IPSec, ASCII 
+
+5. Session Setup, coordinate & termination of sessions (for computers or servers to speak to one another). 
+Protocol examples: NFS, RPC, 5M8, SOCKS 
+
+4. Transport - Coordination of data transfer btw systems & hosts [how much to send, rate, location]. 
+protocol examples: TCP, UDP, AH, DCCP, use port number 
+
+3. Network - Packet forwarding, routing through different routers. Etc IP addresses 
+protocol examples: IP, IPX, AppleTalk 
+
+2. Data link - Node-to-node (directly connected) data transfer. Etc. Media Access Control (MAC) and Logical Link control (LLC). 
+protocol exauples: LLDP, PPP, CDP, VLAN, IEEE 802.11 
+
+1. Physical Electrical & physcial representation, cable type, radio freq etc. 
+protocol examples: Ethernet, USB, DSL, ISDN, IEEE 1394 
+
+*can debug network problem if you are familiar with the 7 layers. 
+
+PART 2: TCP/IP  
+1. Application [App, presentation, session] -> HTTProtocol, DNS (Domain Name Service help to map webnane to IP address) protocol 
+
+2. Transport -> Applications implementing the TCP & UDP protocols listen on these port numbers. 
+TCP and UDP on the receiving host know which application to send the data to based on the port numbers received in the headers. 
+
+3. Internet [Network] -> Has a view of the entire Internetwork 
+
+4. Network access [Data link, physical] -> Limited to the physical layer boundary (etc router). 
+
+Reference: https://www.freeccnastudyguide.con/study-guides/ccna/ch1/1-4-tcpip-node1V
