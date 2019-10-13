@@ -1,0 +1,57 @@
+# Some impt commands:
+ps ‘et | grep ~e ‘(whatever you wanna search)‘ 
+Git remote repo on the server 
+Git local repo on your comp 
+git stash 
+git checkout (file) 
+git stash clear 
+git pull git checkout (file) 
+-error uncommitted changes 
+git reset <file_name> -> unstage a file 
+git checkout -<file_name> 
+git fetch (remote branch/tolder>: it'll pull the data from the remote project] download the data to your local repo 
+git pull: your current branch is set up to track a remote branch + git pull to auto fetch & merge remote to current branch.
+
+git remote will show you the remote servers configured 
+> Exmaple: you cloned your repo -> git remote -> 'origin' the default name of the server where you clone it from. It is given by Git. 
+
+git add > start to track a new file, to stage file => add precisely THIS content to the next commit it it is in a directory, 
+git add -»all will add all the files in that directory recursively. 
+If you modify a file again after git add, it wont be staged. so you need to run git add again 
+
+git tag usually for tagging the versions. By default, git push command doesn’t transfer tags to remote servers. 
+You will have to explicitly push tags to a shared server after you have created them. 
+
+Renaming with git mv 
+git checkout -b foo > Switched to a new branch 'foo' 
+
+git snapshots: The state at that point of time, the changes that you make while developing something and for which you will 
+have a git commit. So consider every commit as an "Snapshot" of your changes --> can be on single or multiple files also.
+GIT stores data as a series of snapshots 
+
+git stash: Take the dirty state of your working directory (modified tracked files and staged changes) and saves it on a stack of unfinished changes that you can reapply at any time. 
+git config push.defau1t current] simple > with simple, git push (without passing a refspec) will fail if current branch is not tracking a remote upstream branch 
+Remote branches [references in your remote repositories] 
+
+# Git blob and Tree object: 
+A blob object stores the contents of a file, but doesn't know what the file is called.
+Now we're creating tree objects, which know what files are called. A tree can point to a blob to describe the file contents. 
+
+# Staging a file 
+> commit can be broken down into two parts -> stage (tell git that this file will be included in the next commit) & commit
+> Staging the files computes a checksum [which is a SHA-l hash] for each one -> stores that version of file [blobs] in the Git repo 
+-> checksum added to the staging area. 
+
+git add > start to track a new file, to stage file => add precisely THIS content to the next commit it it is in a directory, 
+git add -»all will add all the files in that directory recursively. 
+If you modify a file again after git add, it wont be staged. so you need to run git add again 
+
+# Commit too early and you want to make some changes: 
+git commit ~m ‘initial commit' 
+git add forgotten_file 
+git commit --amend 
+**You end up with a single commit the second commit replaces the results of the first. 
+
+# Branching is also like a lightweight pointer, that points to the last commit you made. 
+
+Reference: https:llgit-scm.com/book/en/vZ/Git-Branching-Remote-Branches
