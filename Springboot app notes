@@ -1,0 +1,56 @@
+1. ComponentScan: Tell Spring to detect Spring-managed components 
+
+2. IntegrationComponentScan: Type-safe alternative to basePackages() for specifying the packages to scan for annotated components. 
+The package of each class specified will be scanned. 
+
+3. Console console Systen.console(); 
+Console console . Systen.console(); 
+After doing this the console object with give you a way to interact with the console/terminal from where you ran the program. 
+For example, taking input from the user or writing things out to the screen. 
+
+You use it in the next line: 
+String guessAsString console.readLine(“Enter a letter: "); 
+Here you prompt the user with a message “Enter a letter:" and read in, from the console, whatever they type, 
+and store it in the String variable guessAsString for later use. 
+
+4. Spring Integration 
+To allow for lightweight messaging within the different Spring-based applications. 
+Support integration with external systems via declarative adapters (one-way integration uses Channel, two-ways uses Gateway) 
+*Spring Cloud Stream builds on Spring Integration 
+Reference: https:l/www.intertech.com/Blog/spring-integration-tutorial-part-1-understanding-channels/
+https://www.baeldung.com/spring-integration , https://d20ne.com/articles/spring-integration-gateways-1 
+
+5. Spring integration, QGateway(requestChannel) Gateway is a method to abstract the functionality of the messaging system 
+into discrete interface 
+Etc aim: Request customer information from some external customer maintenance system. 
+In xml, beans: 
+a. Declare a (gateway) element 
+<gateway id.“customerService" 
+//the interface that contain the domain specific method service-interface
+-"com.javarticles.5pring.integration.gateway.CustomerService" default-request-channel-“customerRequestChannel" J 
+default-rep1y-timeout-"3000" /> 
+*Now you have a channel whose channel id is customerRequestChannel 
+
+b. Request message from the gateway will invoke the service adapter, which will call the actual implementation 
+(CustomerServiceImpl class) to return us the customer.
+
+<service-activator input-channel-"customerRequestChannel“> 
+<beans:bean class-“com.javarticles.spring.integration.gateway.CustomerServiceImpl" /> 
+<lservice-activator> 
+
+Reference: https://www.javartic1es.com/201S/05/spring-integration~gateway-example.html
+
+6. Spring Integration - Message channel/ direct channel a pipe btw producer (writes to producer) & consumer (writes to consumer) 
+
+7. Gson: Gson is a Java library that can be used to convert Java Objects into their JSON regresentation 
+
+8. Spring and Threads: TaskExecutor (interface) 
+Single method execute(Runnab1e task) -> accept a task for execution based on the semantics and config of thread pool. 
+https://dzone.com/articles/spring-and-threads-taskexecutor 
+
+9. Assembly.xml 
+For projects which will be distributed in two forms: 
+one for use with appserver A and another for appserver B, contain their different configs in different assembly 
+Ref: https://maven.apache.org/plugins/maven-assembly-plugin/examples/single/using-components html 
+
+10. application-dev.properties: where you define all the properties for the application. 
