@@ -1,0 +1,7 @@
+Java Countdown Latch: 
+To cause a thread to block until other threads have completed a given task. 
+A CountDownLatch has a counter field, which you can decrement as we require. We can then use it to block a calling thread until it’s been counted down to zero. 
+Reference: https://www.baeldung.com/java-countdown-latch
+
+REST API
+REST: REpresentational State Transfer (REST), the client initiates transfer of representations of client state. An Approach to architectural style for writing API.
