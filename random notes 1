@@ -1,0 +1,51 @@
+1. SSH v.s. SFTP
+SSH (secure shell)
+- network protocol to use wherein the client or server connection is authenticated using a digital certification and passwords are encrypted. etc: sshh 1a sit (will prompt you to enter password) 
+
+SFTP (secure tile transfer protocol) > runs over an ssh tunnel (uses ssh authentication) and uses many features of ssh, including compression and encryption.
+chroot SFTP: https://www.thegeekstuft.com/2612/03/chr00tesftp-setup/ >>> only allow users to transfer files and not to ssh the systen [to view the root‘s files], you need to set up the Chroot SFTP Jail. 
+
+CHECKING CONNECTION
+ssh run command on the remote machine server - to check if can reach the other side 
+for i in {11..35); do ssh xelsadaapp${i}a ‘hostname'; done
+- ssh to the host -> will return Authentication Successful -> running the hostname command -> will return the VM host name and domain name 
+- type in ‘p 64022' if doesnt work 
+
+2. SSL
+Secure Sockets Layer (SSL) is a networking protocol designed For securing connections between web clients and web servers over an insecure network 
+
+3. curl GET and -X GET 
+>>just curl by itself will send http request 
+>> -d or -f will use post 
+>>-I will cause a HEAD and -T will make it a PUT. 
+Ref: https://stackovertlow‘com/questions/8498371/cur1-get-and-x-get 
+
+4. NAMESPACE 
+In computing, a namespace is a set of symbols that are used to organize objects of various kinds, so that these objects maybe referred to by name. In Java, namespace ensures that all the identifiers within it must have unique names so that they can be easily identified. 
+etc File Path
+
+5. chroot
+The pretext of creating a virtualized environment in a Unix operating system, separating it From the main operating system and directory structure. This process essentially generates a confined space, with its own root directory, to run software programs. 
+
+6. Keytab file
+The keytab file is an encrypted, local, on-disk copy of the host's key. The keytab File, like the stash file (Create the Database) is a potential polnt-of-entry for a break-ln, and if compromised, would allow unrestricted access to its host.
+
+Keyteb with Kerberos
+A keytab la a file containing pairs at Kerberos principals and encrypted keys (which are derived from the Kerberos password). You can use a keytab file to authenticate to various remote systems using Kerberos without entering a password.
+
+7. EOL conversion (in notepad)
+Change from windows-style to UNIX-style line endings 
+
+8. Datastructure: 
+Dictionary is a keyvalue store. you can use dictionary_ name[' name ] to return the value of that key -) also known as hashmap . 
+
+9. Rerun restart that particular programme Redeploy update and deploy the programme again
+Restart restart the whole server, update, rebuild and deploy the programme at server startup.
+
+10. A daemon (pronounced DEEmuhn) is a program that runs continuously and exists for the purpose of handling periodic service requests that a computer system expects to receive. The daemon program forwards the requests to other programs (or processes) as appropriate. 
+
+11. How DAG works under the covers in RDD (YARN) 
+https: //stackoverflow. com/questions/25836316/howdag-worksunderthe-covers-in-rdd 
+
+12. https default port 443 http default port 80
+
