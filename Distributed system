@@ -1,0 +1,43 @@
+Distributed systems 
+Definition: A group of computers working together as to appear as a single computer to the end user. 
+--> they'll have shared state, operate concurrently and can fail independently without affecting the whole system's uptime. 
+Example: Distributed databae system [our database runs on multiple machines at the same time, *how??] -> user can insert a record into node#1 and node#3 must be able to return that record -> the nodes communicate to each other to coordinate their actions. 
+
+It is scaling horizontally, to handle more traffic/ increase fault tolerance and reduce latency. 
+Allow you to have a node in both cities, allowing traffic to hit the node that is closest to it. 
+Adding more computers than'upgrading the hardware of existing one. 
+
+How does it works? 
+1. 1 master [main place where you update], multiple slaves [sync with master, you read from this]. Limited as time is needed to sync with master, and after all master is only 1 machine. 
+2. Multiple masters replication: Multip1e masters that support both write and read. Prone to conflicts when you insert 2 records with same ID. 
+3. Sharding: split your main master server into smaller multiple servers, with each one storing different stuff. Very inefficient as queries will need to go through all the shards. 
+
+Distributed applications: etc BitTorrent [leacher and seeder], Blockchain 
+
+//////////////////////////////////////////////////////////////////////// 
+"8 Fallacies", the 8 assumptions of a distributed system: 
+The network is reliable. 
+Latency is zero. 
+Bandwidth is infinite. 
+The network is secure. 
+Topology doesn't change. 
+There is one administrator. 
+Transport cost is zero. 
+The network is homogeneous. 
+
+Latency: the time between initiating a request for data and the beginning of the actual data transfer. Bandwidth: A measure of the capacity of a communications channel. The higher a channel's bandwidth, the more information it can carry. 
+
+Topology: The different configurations that can be adopted in building networks, such as a ring, bus, star or meshed. 
+
+Homogeneous network: A network running a single network protocol 
+
+//////////////////////////////////////////////////////////////////////// 
+IP suite
+The Internet protocol suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received. 
+This functionality is organized into four abstraction layers, which classify all related protocols according to the scope of networking involved. 
+
+Each layer having the property that it only uses the functions of the layer below, and only exports functionality to the layer above. 
+From lowest to highest, the layers: 
+A. Link layer, containing communication methods for data that remains within a single network segment (link) -physical transmission of data. over the physical network. 
+B. Internet/ Network layer, providing internetworking between independent networks 
+C. Transport layer, handling host-to-host communication [either TCP or UDP]
