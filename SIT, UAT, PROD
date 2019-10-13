@@ -1,0 +1,19 @@
+DEV > SIT(System integrated testing) > UAT (User Acceptance Testing) > QA > PROD > DR
+
+From DEV to *SIT:
+Has a "continuous build" defined on it that includes automated tests.
+System Integration Testing is performed to confirm whether the modules tested individually can work together to deliver the required functionality. Modules tested individually may work fine, but when they are integrated together some issues may occur. System integration testing is performed to test the dependency between modules through transfer of data from one module to another.
+
+System integration starts at the module level where units are integrated together forming to form a subsystem and eventually a system.
+
+Ref: https://www.tcognition.com/blog/uat-vs-sit-testing-in-qa/
+
+From SIT to *UAT: 
+Testing the software by the user or client to determine whether it can be accepted or not. 
+The main purpose of this testing is to validate the software against the business requirements. This validation is carried out by the end users who are familiar with the business requirements.
+*This is the final testing performed once the functional, system and regression testing are completed.
+
+Ref: https://www.softwaretestinghelp.com/what-is-user-acceptance-testing-uat/
+
+From UAT to PROD:
+Where the live data at
