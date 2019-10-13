@@ -1,0 +1,57 @@
+## File access privileges:
+etc drwxr-xr-x --- these are the file access privileges. 
+
+The first character d tells you that it's a directory and not a regular file. 
+The next 3 characters tells you that the owner has write, read, and 'traverse' privileges on this directory. 
+The next 3 are the permissions for group ownership. Anyone that belongs to the group has the privileges that are shown in these 3 characters. In this case, the r-x means that anyone belonging to the group can read and traverse the directory(s) but cannot write to them. 
+The final three characters are permissions for anybody else. Here again this says that anyone can read and traverse directory(ies) but not write to them. 
+
+## Chmod permissions (flags) explained: 600, 0600, 700, 777, 100 etc.. 
+Permissions: 
+1 can execute 
+2 can write 
+4 can read 
+
+The octal number is the sum of those free permissions, i.e. 
+3 (1+2) can execute and write 
+6 (2+4) can write and read 
+
+Position of the digit in value: 
+1 what owner can
+2 what users in the file group(class) can 
+3 what users not in the file group(class) can 
+*It is in 4 digits, but usually only 3 are used, so just append another 0 in front of the beginning of the number. 
+Example: chmod 0759 file owner can read, write and execute, users in file can execute and read
+
+## Linux
+# _df -h_: List the directories and how much space they take up 
+
+# awk. Basic format awk 'pattem {action}' input-file > output-file 
+Meaning: Take each line of the input file; if the line contains the pattern, apply the action to the  line 
+and write the resulting line to the output file. If the pattern is omitted,the action is applied to all line
+Example: awk '{ print $4 }' tab1e1.txt > output1.txt --- This statement takes the element of the 4th column of each line 
+and write it as a line in the output file: output.txt. 
+by default, columns are assumed to be separated by spaces or tabs (so-called white space)
+
+If the column separator is something other than spaces or tabs, such as a comma, you can specify that in the awk statement as follows: 
+awk -F, '{ print $3 }' table1.txt > output1.txt 
+More at : https://www. lifewire. com/write-awk-commands-and-scripts-2290573 
+
+# SED: 
+SED is used for finding, filtering, text substitution, replacement and text manipulation like insertion, deletion, search 
+etc non-interactive editing oF text files 
+Basic format: sed OPTIONS... [SCRIPT] [INPUTFILE]
+
+#Regular expression in LINUX: 
+https://www.tutorialspoint.com/unix/unix-regular-expressions.htm
+https://guru99.com/linux-regu1ar-expressions.html 
+
+#Cmd: 
+https://www.howtogeek.com/412055/37-important-linux-commands-you-should-know/
+https://maker. pro/linux/tutorial/basic-linux-commands-for-beginners
+
+## UNIX
+TODO
+
+##Windows
+TODO
