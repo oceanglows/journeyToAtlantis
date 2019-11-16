@@ -1,0 +1,370 @@
+Malicious programs or Malware are specifically designed to delete, block, modify, or disrupt the performance of computers and computer networks.
+
+Virus
+Virus is a type of malicious software that can self-replicate and spread to other systems or hosts, eventually corrupting the systems.
+Requires an active operating system/active host program or an already-infected system to run and cause damage.
+Virus spreads easily to other hosts through some means, one of the frequent means being email attachment.
+
+Worm
+Unlike virus, worm is a standalone software that does not need human help/host program to spread.
+Worms can advance and self-replicate within a system using up resources such as processing and memory.
+Enters the system through a vulnerability and attacks information-transport features/file-transport of the system.
+
+Spyware
+Spyware is designed to extract data from its host computer for marketing purposes. It then transmits that data to a remote system without the user's knowledge.
+
+Adware
+Adware is similar to spyware, but it has been designed for advertising. Such as in a pop-up screen.
+
+Trojan
+Trojan is named after the wooden horse that the Greeks used to infiltrate Troy.
+Upon activation, a Trojan attacks a host in the following ways:
+Irritating the user by popping up windows and changing desktops.
+Damaging the host by deleting files, stealing data, or activating and spreading other malware, such as viruses.
+Replicating through user interaction like opening an e-mail attachment, downloading and running a file from the Internet.
+Trojan is commonly known for providing backdoor access to the system for malicious users.
+
+Botnets
+Botnet is derived from the words Robot and Network.
+The objective of creating a botnet is to infect as many connected devices as possible.
+Bot is a device infected by malware, which becomes part of a network of infected devices administered by a single attacker or attack group.
+Looks for vulnerable devices throughout the internet, instead of targeting particular individuals, industries or companies.
+
+Malnets
+While Botnets are largely used to distribute spam and malware to other users, Malnet is used to draw users in and infect them.
+Botnets are controlled by a single or few command servers, whereas Malnets deploy fast-changing infrastructures.
+The Malnet infrastructures allow cybercriminals to open dynamic attacks that can remain unnoticed for days or months, by conventional anti-virus vendors.
+
+Infection: Signs and Symptoms
+Some signs that could indicate your system is infected:
+Reduction in performance due to slow-running processes
+System instabilities
+Internet homepages changed in your browser
+Pop-up ads frequently occur than usual.
+Browser redirection
+Disabled functions
+Unable to connect to the Internet or access higher-level system control functions.
+
+Antivirus Software
+Antivirus software tracks all the files that come into the system from various sources such as USB, mail, or websites, and checks if they match any of its virus or PUP signatures.
+If they match, it typically removes or quarantines them.
+Approximately 95% effective in detecting viruses and PUP's, since new viruses and PUP's are being created frequently.
+Antivirus software requires to be continuously updated so that new signatures can be included.
+
+Myths
+These are the following myths about computer viruses:
+An error message displayed on the system, symbolizes virus infection - False, it can mean software/hardware issues.
+Worms and Viruses always need user interaction - False, malicious code is run.
+Email attachments received from known senders are safe - Wrong, they can be utilized to spread infection.
+Antivirus programs will end all threats - There is no 100% protection.
+Malware cannot inflict physical damage to systems - For example, Stunex Computer Worm
+
+
+CIA: 
+Confidentiality
+Confidentiality is the security attribute that aims to achieve data privacy and protection against unauthorized disclosure. Personal Identifiable Information (PIIs) include Social Security; Credit card information; Account numbers; and Business information such as Financial data, Employee records, and Trade secrets. All of these are categorized as Confidential information.
+
+Integrity
+Protecting data from unauthorized modification is called Integrity.
+Integrity is compromised when data or information is changed or tampered, either accidentally or maliciously.
+Violation of Integrity - e.g., a student logging into the grades and changing his or her Physics grade from D to A.
+Preventing Integrity Violations:
+Auditing network for unusual or suspicious activity.
+Software intrusion detection systems such as Tripwire, can be utilized to examine checksums for any unauthorized changes.
+
+Availability
+Availability is the security attribute that ensures data and services are available to authorized users whenever required.
+A denial of service attack is an attack against availability. This attack sends numerous requests to a system to interrupt services to genuine users.
+A distributed denial of service (DDoS) attack is more disruptive as it uses botnets to launch an attack.
+
+Model
+Multiple Layers - Different controls guard the system against various threats coming at different levels.
+Abstraction - Used for efficiency.
+Data Hiding - Keeps data undiscoverable by unauthorized personnel.
+Encryption - A technique used for masking the original data so that it can’t be interpreted right away.
+
+Cryptography
+Two categories of the encryption algorithm include:
+- Symmetric Encryption Algorithm
+Both encryption and decryption use the same key.
+Utilized for encrypting vast amounts of data (such as a full database or disk partition) as it is quick.
+Primarily used for privacy and confidentiality.
+- Asymmetric Encryption Algorithm
+Uses two different sets of keys for encryption and decryption (public and private key)
+Although the public key may be freely shared, the private key is kept confidentially,
+Very slow and utilized to encrypt data smaller than 2048 bits or smaller key size
+Optimized to encrypt symmetric encryption keys, which are then utilized to encrypt much bigger blocks of data.
+Utilized for key exchange, non-repudiation, and authentication.
+
+Applications of Cryptography
+• Integrity check — Cryptography uses hash function, to ensure data has not been modified, erased or lost in an accidental, or unauthorized manner.
+• Authentication — It positively identifies and validates an entity in a system, such as signing an electronic contract. It uses a digital signature or Method Authentication Code.
+
+Risk = threat * vulnerability
+
+What is an Attack?
+Attack can compromise data security. The two types of attacks are active and passive attacks.
+- Passive Attack
+Tracking transmissions to capture information without the user's knowledge.
+This is non-invasive.
+For example: Capturing passwords or data files.
+- Active Attack
+Here, the intruder tries to crash into secured systems for modifying or stealing information, or for creating malicious code.
+For example: Infusing malicious programs such as Trojans, Viruses, or Worms into systems.
+
+What is an Attack Surface?
+An attack surface denotes any probable, unknown or known vulnerabilities across fields of exposure like Software, Hardware, Network, and User.
+To reduce risks, the attack surface needs to be decreased.
+
+Attack Surfaces - Software and Hardware
+- Software Attack Surface
+It consists of web pages, DLLs, executables, configurations, services, and applications available to authorized users.
+It is intended to point to vulnerabilities that can make anything from a system crash to a small annoyance.
+Software vulnerabilities include code injection and buffer overflow.
+- Hardware Attack Surface
+Hardware attacks can also be achieved via a network communication connection.
+Hardware can create a platform for an attack, but physical access to the system is needed.
+Hardware vulnerabilities covers items that users install such as plug-in flash drives or software.
+
+- Network Attack Surface
+Network attack surface comprises interfaces, ports, applications, devices, protocols, and exposure to channels.
+Network attack surface could be reduced by doing the following actions:
+Ensuring only required features are enabled
+Closing unnecessary ports
+Implementing intrusion prevention systems
+Implementing firewalls
+- User Attack Surface
+Users are the weakest channel in the user attack surface.
+User attack surface can be traced and blocked by logging and auditing.
+
+With the advent of new technologies such as the Internet of Things (IoT), Mobile computing, and Cloud, the attack surface continues to soar. All attack surfaces should be tracked, monitored, and checked.
+
+Intrusion Phases
+A malicious attacker works towards his objectives by planning/performing a set of activities. E.g., exfiltration. Network intrusion happens in a phased manner.
+
+Reconnaissance - Continuous search for identification of possible targets.
+
+Weaponize - Malware Pairing with a deliverable. E.g., MS-office.
+
+Delivery - Transmit the weapon to the identified target. E.g., email and websites.
+
+Exploitation - Exploiting vulnerable system apps. E.g., Triggering a weapon code.
+
+Installation - Backdoor Installation for persistent access.
+
+Command and control - Hands-on keyboard access required for weapon communication.
+
+Most of the cyberattacks are being automated or semi-automated by a specific group of Botmasters.
+
+Cyberattack usually starts with a known URL address. Then by scanning around their LAN or internet space, it can exploit all its associated vulnerable systems also.
+
+Threat Modeling
+Threat modeling is a process by which potential vulnerabilities and threats can be recognized, enumerated, and prioritized – all from the view of a hypothetical attacker.
+
+Considerations
+Identify Security Objectives - Security objectives are the goals that have a significant influence on the confidentiality, integrity, and availability constraints of data and applications in a system.
+
+Survey the Application - Analyze and identify assets, data flow, and trust boundaries (UML component diagram).
+
+Decompose the application - Identify the features and modules that make up an application (How a module validates and processes data before storing it).
+
+Identify Threats and Vulnerabilities - It is essential to consider threats not only from the cyber perspective but also from across the spectrum of physical, personnel, and people.
+
+Assessment and Management
+Static analysis
+Static or Code Analysis is performed by dissecting the different resources of the binary file without executing it and studying each component. Example: Analysis using Machine or Assembly code.
+
+Dynamic analysis
+Dynamic or Behavioral analysis is done by observing the behavior of the malware and is often performed in a sandbox-virtual environment to prevent malware from actually infecting production systems.
+
+Threat Management
+Threat Management is the best practice for managing cyber threats that enables early identification of vulnerabilities using data-driven situational analysis.
+
+Threat analytics: Manual and automated intelligence data collection
+Behavioral modeling: Real-time monitoring
+Advanced analytics: To provide situational Awareness
+
+
+Risk Mitigation
+Reduce risks by preventing cyberattacks using various security related tools, policies, best practices, and guidelines available with latest technologies.
+
+STRIDE - It is a threat classification model that helps to limit the potential false positives threat. This model is used to help reason and find threats to a system.
+
+Spoofing - of valid user identity
+Tampering - Misusing the end user read/write access.
+Repudiation - False denial of origin or receipt.
+Information disclosure - data/information leak
+Denial of Service - Resources unavailable to its intended users.
+Elevation of privilege - exploiting a bug to gain admin access.
+
+
+Cyber Threat Hunting - Prediction
+Cyber threat hunting is a proactive process to predict potential risks efficiently using the following things.
+
+Big data analytics can be used to detect long and slow Advanced Persistent Threats.
+Machine-learning and UEBA - User entity and Behavior Analytics
+Intelligence feeds - Threat intelligence feeds, malware analysis, and vulnerability scans
+
+Threat Intelligence
+Threat intelligence is required at the following levels.
+
+Strategic level - Research analysis and reports. Example: Duqu 2.0 reportfrom Kaspersky published as a result of malware analysis.
+Tactical level - Information exchange between operating communities. Example: FS-ISACis an intelligence-sharing community for the banking industry.
+Operational level - Real-time feed protocols are used within a community. Example: STIX TAXII protocol.
+
+Cybersecurity Architecture
+Cybersecurity architecture is about understanding one's Business Scope, requirements, and then design and develop a security architecture to implement and support it.
+
+Architecture Risk and Controls
+Risks
+
+Security Architecture should identify and protect against Risks. For effective management, it should be a continuous operational activity.
+
+Example: For maintaining minimum 98% SLA, you can define the security control parameter SLA at 98.5% for taking appropriate actions when needed to avoid penalty risk.
+
+Controls
+
+In the Security Architecture Control definition, you are not advised to set one parameter, so we have to define controls at the different stages to detect and avoid possible threats.
+
+Example: For better control, you can define five levels of SLA security controls each from 98.9 to 98.5, respectively along with action points.
+
+SABSA Framework
+Sherwood Applied Business Security Architecture (SABSA) framework is an open source framework and is used to create Enterprise Security Architecture.
+
+A risk-driven method is based on the analysis of the business requirements
+
+The primary objective is to protect the business with the required level of security.
+
+SABSA Framework is commonly represented as 6X6 SABSA matrix.
+
+Incident Response
+Preparation
+Conduct a critical assessment of your organization.
+Carry out a security threat analysis from practical incidents.
+Consider the implication of people, process, technology, and information.
+Create appropriate control framework.
+Review your state of readiness.
+Response
+Identify the cybersecurity incident.
+Define objectives and investigate the situation.
+Take appropriate pre-approved or required actions.
+Recover systems data and connectivity.
+Post-Incident Activities
+Below are the recommended Incident response activities:
+
+Follow-Up
+Investigate incidents more thoroughly.
+Report Incident to relevant stakeholders.
+Carry out a Post-Incident review.
+Update key information, controls, and processes.
+Perform trend analysis.
+Communicate and share the lessons learned.
+
+Incident Category
+Incident Category can be defined according to business priorities ranging from their testing incidents to any unauthorized attack.
+
+Precursor shows us the incident may occur. Example: Flight cabin crew alarm would be a precursor to any Airline Incident.
+
+Indicator shows us the incident may have occurred. Example: Indication for breaching minimum required SLA%.
+
+Critical Decision Point
+The responsive challenge is maintaining the optimum balance between under responsive(being vulnerable) and over responsive(risk of false alarm).
+
+Deep packet inspection can be used to give more context to the precursor or indicator.
+
+If an indicator has turned into an incident, prioritization is perhaps the most critical decision point in the incident handling process.
+
+
+
+Biometric Authentication
+Biometrics authenticate by using an individual's unique attributes or behavior.
+
+Of course, it is the most expensive way to prove identity. Biometrics recognize an individual by checking the captured biometric with the stored biometric template in the system.
+
+Biometrics are divided into two categories:
+
+Behavioral Trait based on a person's activities such as walking, signature, or voice.
+Physiological Biometrics based on measurements of parts of the body such as Hand, face, fingerprint, or iris.
+These are used in multifactor authentication systems. For example, you would place your fingerprint on a sensor and then put your pin in (multifactor authentication).
+
+Biometrics could permanently last for a lifetime. It simplifies access control on devices and networks.
+Behavioral:
+
+Gait is a newer biometric. This is the way someone walks, and we can capture that gait from a distance.
+Signature - This is the way someone signs, the pressure of the stroke and curves.
+Voice Recognition - It recognizes who is speaking, the inflection, and the patterns of their speech. However, it is different from speech recognition.
+Physiological:
+
+Hand geometry is one of the first biometrics and measures each finger and the hands as a whole.
+Facial recognition - A camera scans the face, and it identifies key indicators, the nose, the forehead, and the cheeks.
+Iris recognition - It identifies the colored portion of the eye and the patterns of an iris are very unique.
+
+Introducing RADIUS
+One of the methods used for access control for external users is Remote Authentication Dial-In User Service (RADIUS).
+
+RADIUS Security is being used to do the following activities:
+
+Authenticate clients and determine who they are.
+Authorize what clients can and cannot do on a network.
+Monitor and record activity on the network with Accounting.
+An extension of RADIUS, called TACACS, Terminal-Access Controller Access Control System is very similar to RADIUS.
+
+Access control for routers, network access servers, and other networked computing devices are provided by it.
+
+
+Firewall plays an essential role in Network Security.
+
+A firewall is a hardware or software based method that controls incoming and outgoing data traffic based on a set of guidelines that either permit or deny traffic on a network or host.
+
+Firewalls should be used in every network as they monitor threats.
+
+Classes of Firewall
+Class 1 - Host-based software firewall used on a laptop or desktop computer.
+
+Class 2 - Router firewall that generally offers straightforward firewall attributes. They are not utilized in an enterprise network for security reasons, as they cannot endure aggressive attacks.
+
+Class 3 - Low-end hardware firewall. These are suitable for small businesses, as they have united threat management, with anti-spyware and anti-virus capabilities.
+
+Class 4 - High-end hardware firewalls. They are useful for small and mid-size businesses as they offer edge protection and critical infrastructure environments without decreasing performance.
+
+Class 5 - High-end server firewalls utilized when the stakes are high and are developed for high throughput needs.
+
+Network Access Protection
+A network device that does not have an active firewall and updated patches, can incur a high risk to the corporate network.
+
+Network access protection is a framework that utilizes a Network Policy Server. Here, the Network Policy Server stores the health policies and analyses the health of computers. Three policies are supported.
+Connection requests concludes whether requests from RADIUS clients are managed by a RADIUS server or Network Policy Server.
+Network policies defines if the connection is or rejected or authorized.
+Health policies defines if conditions that must be fulfilled to connect.
+
+Virtual Local Area Network
+A virtual local area network (VLAN) reduces the treats and physical barricade the host as part of the same subnet while building smaller broadcast domains.
+
+VLANs offer many advantages over traditional LANs.
+
+Simplified Administration - When a computer is reallocated, it can still be part of the same VLAN without any hardware reconfiguration.
+
+Performance - By reducing broadcast and multicast, and creating Broadcast Domain using switches instead of routers.
+
+What is a Honeypot?
+A Honeypot is a system set up to lure an attacker, to learn about attack methodologies to protect the real network better, and to gather evidence of intruders.
+
+The placement of a Honeypot depends on your objectives. These objectives can be as follows:
+
+Inside LAN
+In DMZ (demilitarized zone)
+Alternatively, outside as a tasty treat for an attacker.
+The best place to keep a honeypot is in DMZ because despite being a fake system, it is essentially part of your network.
+
+You must put exciting data in the system that can appear to be a valuable target. This aspect is crucial since the data is part of an intrusion detection system. However, the main focus is on gathering information.
+
+Network Monitoring Tools
+WireShark is an interactive network protocol analyzer and capture utility. It is utilized to examine the traffic information at various levels covering from connection-level details to the parts that create a single packet.
+
+Tcpdump is an open source command-line tool for monitoring network traffic. It captures and displays packet headers matching them against a set of criteria.
+
+Syslog
+Syslog is a standard protocol utilized to send event messages or system log to a specific server (syslog server). Syslog stands for System Logging Protocol.
+
+It is utilized initially to gather different device logs from various machines in a central location for review and monitoring.
+The protocol is enabled on the majority of network equipment like firewalls, switches, routers, and even some scanners and printers.
