@@ -1,0 +1,26 @@
+Distributed query processing is the procedure of answering queries (which means mainly read operations on large data sets) in a *distributed environment where data is managed at multiple sites in a computer network. 
+*In a distributed database system, processing a query comprises of optimization at both the global and the local level. The query enters the database system at the client or controlling site. Here, the user is validated, the query is checked, translated, and optimized at a global level.
+
+Query processing involves the transformation of a high-level query (e.g., formulated in SQL) into a query execution plan (consisting of lower-level query operators in some variation of relational algebra) as well as the execution of this plan. 
+
+///////Mapping Global Queries into Local Queries///////
+1) The process of mapping global queries to local ones:
+The tables required in a global query have fragments distributed across multiple sites. The local databases have information only about local data. The controlling site uses the global data dictionary to gather information about the distribution and reconstructs the global view from the fragments.
+
+2) If there is no replication, the global optimizer runs local queries at the sites where the fragments are stored. If there is replication, the global optimizer selects the site based upon communication cost, workload, and server speed.
+
+The global optimizer generates a distributed execution plan so that least amount of data transfer occurs across the sites. The plan states the location of the fragments, order in which query steps needs to be executed and the processes involved in transferring intermediate results.
+
+The local queries are optimized by the local database servers. Finally, the local query results are merged together through union operation in case of horizontal fragments and join operation for vertical fragments.
+
+The goal of the transformation is to produce a plan which is equivalent to the original query (returning the same result) and efficient, i.e., to minimize resource consumption like total costs or response time.
+
+Example, with distributed db, multiple servers at different sites:
+In order to get the overall result, we need to union the results of the three queries as follows −
+σstatus="ongoing"(NewD−PROJECT)∪σstatus="ongoing"(kol−PROJECT)∪σstatus="ongoing"(Hyd−PROJECT)
+
+The main techniques for Distributed query processing: 
+Based on this: https://highlyscalable.wordpress.com/2013/08/20/in-stream-big-data-processing/
+#Technique 1. Partitioning and shuffling
+Data Partitioning -> to break down large dataset into multiple pieces that can be processed by independent processors. Usually for in-stream data filtering used hash-based partitioning.
+Data shuffling ->    
