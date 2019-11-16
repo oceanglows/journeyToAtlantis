@@ -1,0 +1,34 @@
+For kafka:
+Topic 1: 
+Kafka only provides a total order over records within a partition, not between different partitions in a topic. Per-partition ordering combined with the ability to partition data by key is sufficient for most applications. 
+
+However, if you require a total order over records this can be achieved with a topic that has only one partition, though this will mean only one consumer process per consumer group.
+however that there cannot be more consumer instances than partitions.
+
+Topic 2: Consumer
+Basically, if a source record is already consumed by Consumer1, will it
+also get consumed by Consumer2 and Consumer3 all subscribing to the same
+topic ?
+If all the consumers are part of same consumer group (same group.id config
+property), then topic/partition data will be balanced over the all the
+consumers.
+If all the consumer instances have different consumer groups, then all
+messages will broadcast to all consumers
+
+Topic 3: Partitioning and replication are two different things.
+
+Partitioning is for scalability. A topic is partitioned in one or more partitions distributed on different brokers so that more consumers can connect to these brokers in order to receive messages sent to the same topic but from different partitions. Increasing partitions increases scalability and the possibility to have more consumers to get messages from the same topic. Answering your question, each message sent to a topic comes into only one partition (of the topic itself).
+
+Replication is for fault-tolerance. You can specify a replication factor on topic creation and it means that every partition for that topic is replicated more times on different brokers. One replica is the "leader" where producer sends and consumer gets messages; other replicas are "follower" which have copies of messages from the "leader" replica. If the broker which handles the "leader" replica goes down, one of the "follower" becomes leader.
+https://stackoverflow.com/questions/44787552/in-kafka-is-each-message-replicated-across-all-partitions-of-a-topic
+
+
+Topic n: bootstrap_serversedit
+Value type is string
+Default value is "localhost:9092"
+This is for bootstrapping and the producer will only use it for getting metadata (topics, partitions and replicas). The socket connections for sending the actual data will be established based on the broker information returned in the metadata. The format is host1:port1,host2:port2, and the list can be a subset of brokers or a VIP pointing to a subset of brokers.
+
+
+Partitions enable parallel processing of a Topic stream at consumer side. In case of multiple partitions, a consumer in a group pulls the messages from one of the Topic partitions.
+
+However, while partitions speed up the processing at consumer side, it violates message ordering guarantees. Hence partitions should only be used when there is no requirement of processing Topic messages in the order that these were received in. Having said that messages from a particular partition will still be in order.
