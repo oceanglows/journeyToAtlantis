@@ -1,0 +1,88 @@
+D:\elasticsearch-7.1.1
+
+
+Getting started with ElasticSearch:
+1. All the different APIs
+https://stackify.com/elasticsearch-tutorial/
+
+2. Installing Elasticsearch on windows
+https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html
+
+//Before searching -> Need to have data on your index//
+1A. Creating a new document:
+curl -PUT http://localhost:9200/{index}/{type}/{id}
+1B. To create a new record:
+curl -POST http://localhost:9200/my_index/my_type/G123 -curl -H 'Content-Type: application/json' -d '{"user":"Phil","message":"Hello World!"}'
+*G123 can be assigned by you or created by the system
+1C. Result of the PUT/POST request: {"_index":"my_index","_type":"my_type","_id":"G123","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+*_version, default is 1, and it will increase with each future operation 
+
+Reading a file:
+curl -GET http://localhost:9200/my_index/my_type/G123
+*The actual document is shown in the “_source” attribute. 
+
+Updating a version of document:
+Need to specify which version to update, tgt with the stuff u are replacing it with
+# request
+curl -PUT http://localhost:9200/my_index/my_type/G123?version=1 -curl -H 'Content-Type: application/json' -d '{"user":"Phil","message":"Hello, World!"}'
+
+D:\kafkaFiles\kafka_2.12-2.2.1
+
+1. Start zookeeper
+bin\windows\zookeeper-server-start.bat config/zookeeper.properties
+
+2. Start Kafka instance
+bin\windows\kafka-server-start.bat config/server.properties
+
+2a. create a kafka topic to write to
+bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic logstash_logs_csv
+
+check the topic by:
+bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092 
+
+2b. Start logstash
+D:\logstash-7.1.1
+bin\logstash -f  ../data/logstash.config --config.test_and_exit
+
+bin\logstash -f  ../data/logstash.config 
+
+3. Starting a kafka consumer
+bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic logstash_logs_csv --from-beginning
+
+bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic logstash_logs_kafkalog  --partition 1 --from-beginning
+
+4. Start filebeat (like doesnt work leh)
+Run window powershell as administrator
+Start-Service filebeat
+Stop-Service filebeat
+
+5. To run filebeat from command line  (need to run logstash at the same time)
+Run the filebeat.exe from a command prompt and specify the config file (see -h for all the CLI flags).
+D:\filebeat-7.1.1
+.\filebeat.exe -c filebeat.yml -e
+
+
+To check the topic:
+bin\windows\kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic logstash_logs_kafkalog
+
+To avoid exceptions during processing, start and stop the components of your Apache Kafka cluster in the specified order.
+
+When you want to start the cluster, start the components in the following order:
+Apache ZooKeeper servers
+Apache Kafka brokers
+Receiver Logstash servers
+HAProxy service
+Sender Logstash servers
+When you want to stop the cluster, stop the components in the following order:
+Sender Logstash servers
+Receiver Logstash servers
+HAProxy service
+Apache Kafka brokers
+Apache ZooKeeper servers
+
+bin\logstash -e "input{stdin{}} output{stdout{}}"
+
+For Grok filter:
+\(%{DATA:classnamejava}:%{DATA:method}\) - %{GREEDYDATA:log_message}
+
+hadoop-hdfs-NAMENODE-RESOURCEMANAGER.log
