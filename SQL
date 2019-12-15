@@ -1,0 +1,17 @@
+1. SQL Select newest records that have distinct Name column:
+SELECT t1.ID, t1.Name, t1.Price, t1.Date 
+FROM   temp t1 
+INNER JOIN 
+(
+    SELECT Max(date) date, name
+    FROM   temp 
+    GROUP BY name 
+) AS t2 
+    ON t1.name = t2.name
+    AND t1.date = t2.date 
+ORDER BY date DESC 
+
+Credits: https://stackoverflow.com/questions/10452940/sql-select-newest-records-that-have-distinct-name-column
+
+2. Rank(), Dense_Rank(), Row_Number()
+Ref: http://www.gurujipoint.com/2017/04/difference-between-rank-denserank-and.html
