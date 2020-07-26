@@ -1,0 +1,12 @@
+Using metricbeat to calculate the correct system metrics like CPU:
+
+Aggregation:
+Bucket Script
+
+Variables:
+user -- Average of system.cpu.user.pct
+system -- Average of system.cpu.system.pct
+n -- Average of system.cpu.cores
+
+Painless Script
+params.n > 0 ? (params.user + params.system)/params.n : null
