@@ -1,0 +1,38 @@
+SSL
+SSL stands for Secure Sockets Layer and, in short, it's the standard technology for keeping an internet connection secure and safeguarding any sensitive data that is being sent between two systems.
+It does this by making sure that any data transferred between users and sites, or between two systems remain impossible to read. It uses encryption algorithms to scramble data in transit, preventing hackers from reading it as it is sent over the connection. 
+
+TLS (Transport Layer Security) is just an updated, more secure, version of SSL. TLS certificates with the option of ECC, RSA or DSA encryption.
+
+You'll need to purchase a SSL certificate. An SSL certificate is installed on the server side. The basic principle is that when you install an SSL certificate on your server and a browser connects to it, the presence of the SSL certificate triggers the SSL (or TLS) protocol, which will encrypt information sent between the server and the browser (or between servers). SSL operates directly on top of the transmission control protocol (TCP), effectively working as a safety blanket. It allows higher protocol layers to remain unchanged while still providing a secure connection. So underneath the SSL layer, the other protocol layers are able to function as normal.
+
+When you install an SSL/TLS certificate on your web server (often just called an “SSL certificate), it includes a public key and a private key that authenticate your server and let your server encrypt and decrypt data.
+When a visitor goes to your site, their web browser will look for your site’s SSL/TLS certificate. Then, the browser will perform a “handshake”/ asymmetric encryption to check the validity of your certificate and authenticate your server.
+Once a visitor’s browser determines that your certificate is valid and authenticates your server, it essentially creates an encrypted link between it and your server to securely transport data.
+
+
+SSL/TLS handshake:
+Every SSL/TLS connection begins with a “handshake” – the negotiation between two parties that nails down the details of how they’ll proceed. The handshake determines what cipher suite will be used to encrypt their communications, verifies the server, and establishes that a secure connection is in place before beginning the actual transfer of data. 
+
+Client to Server: Request to set up an encrypted session, list of cipher suites & SSL/TLS versions
+Server to Client: Ok use this cipher suite & TLS version. Here's my certificate + public key.
+Client to Server: Validate certificate. Extracts public key, encrypts a new "pre-master key", send to server. 
+
+*Server will use its private key to decrypt the pre-master key
+**Both C & S will use the pre-master key to compute a shared secret key -- Shared secret. which will be used to encrypt and decrypt data
+
+Free & Paid SSL certificates
+Free SSL certificates fit into two categories. ‘Self-Signed Certificates’ are the ones in which there is no need for any Certificate Authority to sign them. They are signed by the issuer him/herself. On the other hand, the second type of free SSL certificate available in the market is signed by a Certificate Authorities (CA). 
+
+To equip a website with these certificates, one must pay for it. A paid certificate is issued and signed by a trustworthy certificate authority (CA). You either get it directly from the Certificate Authority’s website or you can purchase it from 3rd party entities called ‘Resellers’.
+
+As far as the level of encryption is concerned, a free SSL certificate provides the same level of encryption as the paid ones.
+
+With a free SSL certificate, if anything goes wrong on the CA’s end – like, a catastrophic failure of their PKI for instance – you are completely out of luck. Paid SSL certificates don’t have this issue, because they come backed by warranties that pay out anywhere between 10 grand and 1.75 mils.
+
+Hackers:
+If an SSL certificate is being used correctly, all an attacker will be able to see is which IP and port is connected and roughly how much data is being sent. They may be able to terminate the connection but both the server and user will be able to tell this has been done by a third party. However, they will not be able to intercept any information, which makes it essentially an ineffective step. The hacker may be able to figure out which host name the user is connected to but, crucially, not the rest of the URL. As the connection is encrypted, the important information remains secure.If an SSL certificate is being used correctly, all an attacker will be able to see is which IP and port is connected and roughly how much data is being sent. They may be able to terminate the connection but both the server and user will be able to tell this has been done by a third party. However, they will not be able to intercept any information, which makes it essentially an ineffective step. The hacker may be able to figure out which host name the user is connected to but, crucially, not the rest of the URL. As the connection is encrypted, the important information remains secure.
+
+Firstly, if SSL is present on the site, users will see https:// at the start of the web address rather than the http:// (the extra "s" stand for "secure"). Depending on what level of validation a certificate is given to the business, a secure connection may be indicated by the presence of a padlock icon or a green address bar signal.
+
+Reference: https://www.websecurity.digicert.com/en/sg/security-topics/what-is-ssl-tls-https , https://kinsta.com/knowledgebase/tls-vs-ssl/ , https://www.ssl.com/article/ssl-tls-handshake-overview/, https://sslrenewals.com/blog/difference-between-free-ssl-certificate-and-paid-ssl-certificate  
