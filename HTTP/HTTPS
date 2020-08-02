@@ -1,0 +1,14 @@
+HTTP: 
+HTTP (Hypertext Transfer Protocol) is the set of rules for transferring files, such as text, graphic images, sound, video, and other multimedia files, on the World Wide Web. 
+
+As soon as a web user opens their web browser (WWW), the user is indirectly making use of HTTP. 
+
+HTTP is an application protocol that runs on top of the TCP/IP suite of protocols (the foundation protocols for the Internet). It is the idea that that files can contain references to other files whose selection will prompt additional transfer requests. 
+
+A web browser is an HTTP client, sending requests to server machines. A Web server machine will contains an HTTP daemon, which will wait for HTTP requests and handle them when they arrive. When the browser user enters file requests by either "opening" a web file (typing in a URL) or clicking on a hypertext link, the browser builds an HTTP (GET) request and sends it to the Internet Protocol address (IP address) indicated by the URL. The HTTP daemon in the destination server machine receives the request and sends back the requested file or files associated with the request.
+When these requests and responses are being sent, they use TCP/IP to reduce and transport information in small packets of binary sequences of ones and zeros. Each HTTP request is inside an IP packet, and each HTTP response is inside another IP packet--or more typically, multiple packets, since the response data can be quite large. These packets are physically sent through electric wires, fiber optic cables and wireless networks.
+
+*usually DNS will map the domain name to the IP
+
+HTTPS:
+HTTPS (HTTP over SSL or HTTP Secure) is the use of Secure Sockets Layer (SSL) or Transport Layer Security (TLS) as a sublayer under regular HTTP application layering. HTTPS encrypts and decrypts user HTTP page requests as well as the pages that are returned by the Web server. The use of HTTPS protects against eavesdropping and man-in-the-middle (MitM) attacks. 
