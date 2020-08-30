@@ -1,3 +1,30 @@
+
+##Useful commands
+Search for sth:
+ps -ef | grep - e "yarn"
+
+Check for what is using that particular port:
+sudo netstat -tulpn | grep 9083
+
+List file and check permission:
+ls -lh
+
+Change permission
+chmod a+x * (for all files)
+
+Looping through the different hosts:
+for i in {3..35}; do ssh hostname${i}a 'hostname; ps -ef | grep -e beat '; done
+
+Download sth:
+curl -O http.....
+
+Output to null:
+> /dev/null/ 2>&1 &
+
+
+
+
+
 ## File access privileges:
 etc drwxr-xr-x --- these are the file access privileges. 
 
