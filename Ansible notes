@@ -1,0 +1,127 @@
+///What is Ansible///
+Anslble (PYTHON) for automation to the provision of the target environment and to then deploy the application. 
+It helps you with configuration management, application deployment, task automation, and also IT orchestration. 
+It can run tasks in a sequence and create a chain of events happening on different servers or devices. 
+
+Ansible works by connecting to nodes and sending small programs called modules to be excuted remotely on the nodes. 
+
+You can write codes that describe the installation and deployment of you applications/ services -- write once for installation and deploy multiple times. 
+- Ensures automation, reduce work 
+- Ensures consistency of the systems in the infrastructure 
+- Automatic deployment/ scaling up
+
+///Main actors in Ansible:///
+1. Controller Machine: Machine where Ansible is installed 
+2. Inventory: Information regarding servers to be managed
+3. Playbook: Automation is defined using tasks defined in YAML format 
+4. Task: Procedure to be executed
+5. Module: Predefined commands executed directly on remote hosts 
+6. Play: Execution of a playbook 
+7. Role: Pre-defined way for organizing playbooks
+8. Handlers: Tasks with unique names that will only be executed if notified by another task
+9. Meta: neither a plugin or module. Influence Ansible internal execution or state 
+etc: clean_facts,c1ear_host_errors,end_host ,end_p1ay ,f1ush_hand1ers ,noop ,refresh_inventory ,reset_connection 
+
+** Within a play, ALL hosts are going to get the SAME TASK DIRECTIVES.** 
+Playbooks contain plays which contain tasks. 
+Tasks call modules & run sequentially & trigger handlers (runs once at the end of plays) 
+
+////In playbook YML://// 
+1. write all the tasks you want the client nodes to do 
+2. keep the value of 'hosts' the same as what you have defined in the inventory file 
+3. indentation is very important the first dash refers to the highest stage of the playbook which is the name of the playbook etc sample book 
+
+run "ansible-playbook sample.yml --syntax-check" when u run ansible-playbook, 
+>> ok means its already there, changed means its not there but you have deployed to make the change 
+
+YAML in ansible: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html 
+
+/////Tasks List:///// 
+Each play contains a list of tasks. Tasks are executed in order, one at a time, against all machines matched by the host pattern, before moving on to the next task. 
+When running the playbook, which runs top to bottom, hosts with failed tasks are taken out of the rotation for the entire playbook. If things fail, simply correct the playbook file and rerun. 
+The goal of each task is to execute a module, with very specific arguments. 
+
+Ansible task options (tags) & conditional statements (when): 
+**Ansible by default transfer files to the remote machine via the use of stfp by default** 
+Refer to this if you want to disable it as it may not be required for all program: https://serverfault.com/questions/582171/is-the-ssh-sftp-subsystem-required-on~the-managed-nodes-for-ansible-to-work 
+
+
+///Creating reusable playbook: ///
+1. Ansible Role: 
+   An independent component of playbook which has to be used within playbook 
+   A Pre-defined way for organizing playbooks 
+   Always executed first before any other play tasks 
+   Allows the reuse of common configuration steps 
+   meta/mains.yml ~> consist of all the roles & parameters & all the dependencies (ROLE DEPENDENCIES EXECUTED BEFORE THE ROLE THAT INCLUDES THEM) 
+     To execute the same role multiple times, define each of the instance with different parameters or add allow_duplicates: true to the roles/name_of_the_repeated_role/meta/main.yml file for the role. 
+Roles are defined using YAML files with a predefined directory structure -> Use ansible-galaxy init <ROLE_NAME> to generate a new role in your working directory, with the main directories and yaml files created within the new role -> use tree <ROLE_NAME> to list out the dirittories. 
+Essentially a GROUP of variables (-), tasks(-), templates (-), files and handlers(-) stored in a standardized file structure
+Setting your roles: https://linuxacademy.com/blog/linux-academy/ansible-roles-exp1ained/ 
+
+**You can create your pre-defined variables in the defaults and variables' main.yml > their values will be used in the tasks' main.ym1 
+
+2. Import (static, ansible preprocess these during Playbook parsing time) 
+PARENT TASK options will be copied to all child tasks contained within the import cannout use variables from inventory sources 
+
+3. Include (dynamic, processed during runtime, at the point in which that task is encountered) 
+Apply to the dynamic task as it is evaluated, NOT COPIED to child tasks = it is good when you use it with looping, but:
+   Tags which only exist inside a dynamic include will not show up in --list-tags output. 
+   Tasks which only exist inside a dynamic include will not show up in --list-tasks output. 
+   You cannot use notify to trigger a handler name which comes from inside a dynamic include 
+   You cannot use --start-at-task to begin execution at a task inside a dynamic include. 
+
+All templating happens on the Ansible controller machine (jinja2 only required to be installed here) before the task is sent and executed on the target machines.
+roles/tasks/mains.yml:
+-name: install template files on host machines
+ template: 
+   src: my_conf.yml
+   dest:/etc/my-folder/my_conf.yml
+   owner: root
+   group: root
+   mode: 0755
+   
+
+Reference: 
+https: //docs.ansible.com/ansible/latest/user_guide/playbooks_conditiona1s.html 
+https://opensource.com/article/19/3/developing-ansible-modules 
+Glossary of Ansible: https://docs.ensible.com/ansible/latest/reference_pppendices/glossary.html 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+* Ansible handlers: *
+Handlers are just like regular tasks in an Ansible playbook (see Tasks) but are only run if the Task contains a notify directive and also indicates that it changed something. Etc handler for service restart. 
+>> the name of the ‘function' will be called in some places inside the tasks file 
+
+* Ansible variables: 
+Defining in inVentory assign a variable to one machine (host variables) & assigning a variable to many machines (group variables) . 
+
+Defining in playbook locally 
+
+Ansible_facts variable are variables that are discovered, infor derived from your remote system [can be disabled to avoid conflicts] 
+
+Using variables in playbook with jinjaZ but not neccessary. Jinja2 usually use with templating which consist. of the configuration parameters. 
+
+etc. My amp goes to {{ max_amp_value }} . 
+
+Ansible register: Used when you want to capture the output of a task to a variableii 
+
+* Ansible Modules: 
+Task plugins or library plugins 
+module packages up a particular task and takes responsibility for: 
+1. Providing a CONSISTENT method for a user to describe the intended state of the system, in terns of the feature the nodule targets 
+2.Hand1es checking the target system to determine whether the system state matches that requested by the user, for the feature the nodule targets 
+3. Only if necessary, changes the target system to match the state requested by the user, for the feature the nodule targets
+
+path: $HOME/test_directory -> this will create a new folder name test_directory on all the hosts you stated 
+
+state: directory 
+1. Set state to absent if you want it gone. Set state to touch if it does not exist you create a new file State is file it will throw an error if the file does not exist, so u change to touch State = link, src & dest, create a link btw files. when you call one, its the same as u call 
+2. Example, shell nodule: *there is a big difference btw command & shell modules hale: run command on shell hosts: "' tasks: name: run command with shell shell: ech ”Hello, shell!" > /tmp/shell_output //output to a file name shell_ouput register: shell_output //capture the output of the shell task and put into 3 var name shell_output 
+
+//capture the output of the shell task and put into a var name shell_output name: debug shell_output debug: var=shell_output 
+
+ref: https://www.youtube.com/watch?v=57gAquAch&li5t=PLMyOob-UkeytIlerMlFszaunOh27hm6&index=19 
+
+* Ansible tag: 
+
+Main purpose of tag is to have dynamic control over the tasks that need to he executed in that particular run -> the tasks are executed out in order in the main yml file so some of the tasks can be skipped executed based on the tag called.
+Ref: https://stackoverflow.com/questions/40181416/calling-an-ansible-playbook-with-tag-and-parameter/40185915 
