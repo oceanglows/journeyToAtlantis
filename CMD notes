@@ -18,10 +18,10 @@ for i in {3..35}; do ssh hostname${i}a 'hostname; ps -ef | grep -e beat '; done
 Download sth:
 curl -O http.....
 
+////Redirection///
 Output to null:
 > /dev/null/ 2>&1 &
-
-
+Ref: https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-i-o-redirection 
 
 
 
