@@ -16,11 +16,9 @@ With experience in these areas:
     Filebeat for log aggregation
     Metricbeat with JMX + Jolokia for collection of metrics
     Collectd for collection of metrics (to try)
-    ELK stack for log/metrics streaming from filebeat and metricbeat [Logstash, Kakfa + Zookeeper, AWS Kinesis (-), Elasticsearch(-)]
+    ELK stack for log/metrics streaming from filebeat and metricbeat [Logstash, Kakfa + Zookeeper, AWS Kinesis (-), Elasticsearch]
     Data visualization with Kibana and Grafana
 
 Interested in/ currently learning:
-  - Basic computer science foundation
-  - To build a full ELK pipeline on my own
   - Kerberos
 
