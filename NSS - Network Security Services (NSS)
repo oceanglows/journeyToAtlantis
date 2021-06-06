@@ -1,0 +1,7 @@
+When you set up TLS encryption or certificate-based authentication, you must manage the certificates which are stored in a Network Security Services (NSS). 
+You need to create the NSS Database for a Directory Server Instance, and stores the certificates in an NSS database in the /etc/dirsrv/slapd-instance_name/ directory.
+
+Ref: 
+https://access.redhat.com/documentation/en-us/red_hat_directory_server/10/html/administration_guide/managing_the_nss_database_used_by_directory_server
+https://wiki.archlinux.org/title/Network_Security_Services
+https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS/Reference/NSS_Certificate_Functions
