@@ -1,0 +1,19 @@
+What is Proxy:
+To put it simply, it is a computer system or router that sits in between client and server.
+It is one of the tools used to build a firewall. 
+Requests will go to the proxy server before going to the end user/ internet. 
+
+2 impt types of proxies you should know:
+- Forward proxy
+  Sits on client side - hide the details of the clients from the servers.
+- Reverse proxy 
+  Typically sits behind the firewall in a private network and directs client requests to the appropriate backend server. 
+
+What is Reverse proxy:
+- used for security, load balancing etc. 
+- To accomplish that, client requests would resolve to a machine that would act as a load balancer. The load balancer would then proxy that traffic back to the individual servers.
+
+Ref: 
+https://www.pcmag.com/encyclopedia/term/proxy-server
+https://www.nginx.com/resources/glossary/reverse-proxy-server/
+https://www.varonis.com/blog/what-is-a-proxy-server/
