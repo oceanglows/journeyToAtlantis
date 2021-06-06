@@ -1,0 +1,23 @@
+Gateway-as-a-Service (GaaS) - Enabling internet access for containers:
+
+Why is it an issue
+  Due to the Dynamic natures of the IP addresses of containers
+  Taking Kubernetes as an example, when an application is containerised and managed by the container management platform (etc Openshift), the application pod outgoing IP address will be determined by the node that the pod is hosted on. 
+    - When a pod is being created or re-created within the cluster due to auto-healing or scaling, the pod may be re-created in another different node which indirectly changes the outgoing IP address.
+    - Pods from different applications can also be created within the same node resulting in different applications sharing the same outgoing IP address.
+    - Traditional firewall controls concept of using source and destination IP addresses ineffective as firewall rules no longer can accurately identify which traffic should be blocked or allowed.
+
+Solution: proxy-based solution Gateway-as-a-Service (GaaS)
+  1. What is it?
+    - A proxy appliance that sits between the enterprise systems and the internet that acts as a gateway to control all traffic going in and out of the organisation.
+    - Instead of using source IP addresses as an identifier , Gaas uses application accounts (it does not have to be specific to GaaS, only requires this account to ‘onboard’ to GaaS)
+  2. How does it works?
+    One big player is F5 network company (https://en.wikipedia.org/wiki/F5_Networks)
+    - LDAP authentication manager [F5 Access Policy Manager (APM)] — For LDAP ( Lightweight Directory Access Protocol is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol network) authentication.
+    - F5 BIG-IP SSL Orchestrator — Inspecting inbound and outbound traffic to enable anti-virus scanning and prevent sending confidential data out of the organisation.
+    - ICAP configuration — Used to execute a remote procedure call to external component e.g. for anti-virus via ICAP protocol.
+    - Data group [F5 BIG-IP Local Traffic Manager] — For grouping of ‘whitelist’ and ‘blacklist’ of URLs by application account ID.
+    - iRules, TCL scripts [F5 BIG-IP Local Traffic Manager] — The main logic where it will be and to perform checks on all HTTP traffic using GaaS as the proxy. Used within the proxy appliance to customise different sets of rules for checking whenever it receives a traffic.
+
+
+Ref: https://medium.com/dbs-tech-blog/accessing-internet-for-application-hosted-in-a-container-platform-a2078f463b93
